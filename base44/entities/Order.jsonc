@@ -1,0 +1,65 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "title": "Identifiant produit"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        }
+      },
+      "title": "Articles"
+    },
+    "total": {
+      "type": "number",
+      "title": "Total (\u20ac)"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email client"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid",
+        "failed",
+        "refunded"
+      ],
+      "default": "pending",
+      "title": "Statut"
+    },
+    "stripe_session_id": {
+      "type": "string",
+      "title": "Session de paiement"
+    },
+    "supplier_dispatched": {
+      "type": "boolean",
+      "title": "Transmise au fournisseur",
+      "default": false
+    },
+    "relance_sent": {
+      "type": "boolean",
+      "title": "Relance panier envoy\u00e9e",
+      "default": false
+    }
+  },
+  "required": [
+    "total",
+    "status"
+  ]
+}

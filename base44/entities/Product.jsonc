@@ -1,0 +1,86 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nom"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "price": {
+      "type": "number",
+      "title": "Prix (\u20ac)"
+    },
+    "cost_price": {
+      "type": "number",
+      "title": "Co\u00fbt fournisseur (\u20ac)",
+      "description": "Prix d'achat fournisseur (prix bas du march\u00e9), sert au calcul de marge."
+    },
+    "old_price": {
+      "type": "number",
+      "title": "Ancien prix (\u20ac)"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Image principale",
+      "format": "uri"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "title": "Galerie photos"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "high_tech",
+        "maison",
+        "mode"
+      ],
+      "title": "Univers"
+    },
+    "units_sold": {
+      "type": "number",
+      "title": "Unit\u00e9s vendues"
+    },
+    "rating": {
+      "type": "number",
+      "title": "Note"
+    },
+    "reviews": {
+      "type": "number",
+      "title": "Avis"
+    },
+    "badge": {
+      "type": "string",
+      "title": "Badge"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Caract\u00e9ristiques"
+    },
+    "stock": {
+      "type": "number",
+      "title": "Stock"
+    },
+    "rank": {
+      "type": "number",
+      "title": "Classement best-seller"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "image_url",
+    "category"
+  ]
+}
