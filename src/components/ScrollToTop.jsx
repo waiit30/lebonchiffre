@@ -27,6 +27,10 @@ export default function ScrollToTop() {
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", { page_path: pathname + hash });
+    }
   }, [pathname, hash, navigationType]);
 
   return null;
